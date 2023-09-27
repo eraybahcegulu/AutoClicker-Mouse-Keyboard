@@ -1,13 +1,11 @@
 # AutoClicker
 
-anti-cheat bypass
+require Administrator
 ```
 <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
 ```
 
 * ?fix, Countdown only updating when clicked or pressed
-* ?fix, Some character animations require long press
-* ?add, Hold down setting
 
 ```
 VK_SPACE	0x20	SPACEBAR
