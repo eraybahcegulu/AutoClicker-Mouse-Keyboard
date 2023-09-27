@@ -11,6 +11,7 @@ namespace AutoClicker
         [DllImport("user32.dll")]
         private static extern void keybd_event(int bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
 
+        const int KEYEVENTF_KEYDOWN = 0x0000;
         private const int KEYEVENTF_KEYUP = 0x0002;
         private int clickType = 0x0002;
         private const int VK_W = 0x57;
@@ -139,7 +140,7 @@ namespace AutoClicker
                 DateTime currentTime = DateTime.Now;
 
                 TimeSpan elapsed = currentTime - clickStartTime;
-
+                
                 if (clickDuration > 0 && elapsed.TotalMilliseconds >= clickDuration)
                 {
                     StopAutoclick();
