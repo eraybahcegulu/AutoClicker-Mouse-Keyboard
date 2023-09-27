@@ -2,12 +2,21 @@
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using TheArtOfDev.HtmlRenderer.Adapters.Entities;
 
 namespace AutoClicker
 {
     public partial class HoldKeyx : Form
     {
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetDesktopWindow();
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindow(IntPtr hWnd, uint uCmd);
+
         public HoldKeyx()
         {
             InitializeComponent();
@@ -16,12 +25,12 @@ namespace AutoClicker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HoldKey((int)Keys.Space, TimeSpan.FromSeconds(10));
+            HoldKey((int)Keys.W, TimeSpan.FromSeconds(10));
         }
 
         private void HoldKey(int keyCode, TimeSpan duration)
         {
-            INPUT[] inputs = new INPUT[2];
+            INPUT[] inputs = new INPUT[1];
 
             inputs[0] = new INPUT
             {
@@ -39,36 +48,17 @@ namespace AutoClicker
                 }
             };
 
-            inputs[1] = new INPUT
-            {
-                type = InputType.Keyboard,
-                u = new InputUnion
-                {
-                    ki = new KEYBDINPUT
-                    {
-                        wVk = (ushort)keyCode,
-                        wScan = 0,
-                        dwFlags = 2,
-                        time = 0,
-                        dwExtraInfo = IntPtr.Zero
-                    }
-                }
-            };
-
             DateTime endTime = DateTime.Now.Add(duration);
 
             while (DateTime.Now < endTime)
             {
-                SendInput(2, inputs, Marshal.SizeOf(typeof(INPUT)));
+                SendInput(1, inputs, Marshal.SizeOf(typeof(INPUT)));
                 Thread.Sleep(50);
             }
         }
 
         [DllImport("user32.dll")]
         private static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
-
-        [DllImport("user32.dll")]
-        private static extern uint MapVirtualKey(uint uCode, uint uMapType);
 
         [StructLayout(LayoutKind.Sequential)]
         private struct INPUT
@@ -96,7 +86,6 @@ namespace AutoClicker
             public uint dwFlags;
             public uint time;
             public IntPtr dwExtraInfo;
-            public uint dwReserved;
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -124,8 +113,5 @@ namespace AutoClicker
             Keyboard = 1,
             Hardware = 2
         }
-
-        private const uint KEYEVENTF_KEYDOWN = 0x0000;
-        private const uint KEYEVENTF_KEYUP = 0x0002;
     }
 }
