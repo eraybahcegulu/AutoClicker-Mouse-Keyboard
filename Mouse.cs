@@ -13,7 +13,8 @@ namespace AutoClicker
 
         private bool isAutoClicking = false;
         private int clickInterval = 1000;
-        private int clickType = 0x02;
+        private int clickTypeDown = 0x0002;
+        private int clickTypeUp = 0x0004;
         private int clickDuration = 0;
         private DateTime clickStartTime;
         private Random random = new Random();
@@ -136,8 +137,8 @@ namespace AutoClicker
                 }
                 else
                 {
-                    mouse_event(clickType, 0, 0, 0, 0);
-                    mouse_event(0x04, 0, 0, 0, 0);
+                    mouse_event(clickTypeDown, 0, 0, 0, 0);
+                    mouse_event(clickTypeUp, 0, 0, 0, 0);
 
                     foreach (string item in DelayCheckedListBox.CheckedItems)
                     {
@@ -227,11 +228,13 @@ namespace AutoClicker
             {
                 if (item == "Left Click")
                 {
-                    clickType = 0x02;
+                    clickTypeDown = 0x0002;
+                    clickTypeUp = 0x0004;
                 }
                 else if (item == "Right Click")
                 {
-                    clickType = 0x08;
+                    clickTypeDown = 0x0008;
+                    clickTypeUp = 0x0010;
                 }
             }
 

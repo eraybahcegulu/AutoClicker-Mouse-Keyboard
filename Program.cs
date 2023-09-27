@@ -16,7 +16,7 @@ namespace AutoClicker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HoldKeyx());
+            Application.Run(new Main());
         }
     }
 }
