@@ -8,6 +8,23 @@ require Administrator
 * ?fix, Countdown only updating when clicked or pressed
 
 ```
+SW_HIDE (0): Pencereyi gizle.
+SW_SHOWNORMAL (1): Pencereyi normal boyutta göster.
+SW_SHOWMINIMIZED (2): Pencereyi küçültülmüş durumda göster.
+SW_SHOWMAXIMIZED (3): Pencereyi tam ekran (büyütülmüş) olarak göster.
+SW_SHOWNOACTIVATE (4): Pencereyi normal durumda göster, ancak etkinleştirme yapma.
+SW_SHOW (5): Pencereyi en sonki boyutta ve konumda göster.
+SW_MINIMIZE (6): Pencereyi minimize (küçültülmüş) duruma getir.
+SW_SHOWMINNOACTIVE (7): Pencereyi minimize durumda göster, ancak etkinleştirme yapma.
+SW_SHOWNA (8): Pencereyi en sonki durumda göster, ancak etkinleştirme yapma.
+SW_RESTORE (9): Pencereyi geri yüklenmiş (restore) durumda göster.
+SW_SHOWDEFAULT (10): Windows'un pencere durumunu varsayılan olarak belirler.
+
+WH_KEYBOARD (2): Klavye olaylarını takip etmek için kullanılır. Ancak, daha modern uygulamalarda genellikle WH_KEYBOARD_LL (Low-Level Keyboard Hook) tercih edilir.
+WH_MOUSE (7): Fare olaylarını takip etmek için kullanılır. Bu hook türü, fare tıklamaları ve hareketleri gibi olayları izler.
+
+
+
 VK_SPACE	0x20	SPACEBAR
 
 wVk = (ushort)keyCode,
@@ -102,4 +119,5 @@ wParamH:
         ///</summary>
         F12 = 0x7B,
         ///<summary>
+
 ```
