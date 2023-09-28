@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gotoMouse = new System.Windows.Forms.Button();
+            this.gotoProcess = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // KeyboardKeyCheckedListBox
@@ -184,12 +185,23 @@
             this.gotoMouse.UseVisualStyleBackColor = false;
             this.gotoMouse.Click += new System.EventHandler(this.gotoMouse_Click);
             // 
+            // gotoProcess
+            // 
+            this.gotoProcess.Location = new System.Drawing.Point(304, 160);
+            this.gotoProcess.Name = "gotoProcess";
+            this.gotoProcess.Size = new System.Drawing.Size(92, 47);
+            this.gotoProcess.TabIndex = 10;
+            this.gotoProcess.Text = "Process";
+            this.gotoProcess.UseVisualStyleBackColor = true;
+            this.gotoProcess.Click += new System.EventHandler(this.gotoProcess_Click);
+            // 
             // Keyboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(410, 255);
+            this.Controls.Add(this.gotoProcess);
             this.Controls.Add(this.gotoMouse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -223,5 +235,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button gotoMouse;
+        private System.Windows.Forms.Button gotoProcess;
     }
 }

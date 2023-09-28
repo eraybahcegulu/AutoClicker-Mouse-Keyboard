@@ -140,7 +140,7 @@ namespace AutoClicker
                 DateTime currentTime = DateTime.Now;
 
                 TimeSpan elapsed = currentTime - clickStartTime;
-                
+
                 if (clickDuration > 0 && elapsed.TotalMilliseconds >= clickDuration)
                 {
                     StopAutoclick();
@@ -281,7 +281,7 @@ namespace AutoClicker
             gotoMouse.Enabled = false;
 
         }
-        
+
         private void StartAutoclick()
         {
 
@@ -323,7 +323,7 @@ namespace AutoClicker
             gotoMouse.Enabled = true;
             CountdownLabel.Text = $"Countdown";
         }
-        
+
         private void KeyboardKeyCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (e.Index == 0 && e.NewValue == CheckState.Checked)
@@ -435,6 +435,13 @@ namespace AutoClicker
             Mouse Mouse = new Mouse();
             Mouse.Show();
             this.Hide();
+        }
+
+        private void gotoProcess_Click(object sender, EventArgs e)
+        {
+            ProcessId ProcessId = new ProcessId();
+            ProcessId.Show();
+
         }
     }
 }
