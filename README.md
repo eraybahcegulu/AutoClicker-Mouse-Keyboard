@@ -7,6 +7,12 @@ require Administrator
 
 * ?fix, Countdown only updating when clicked or pressed
 
+![1](https://github.com/eraybahcegulu/AutoClicker-Mouse-Keyboard/assets/84785201/b6aafe5a-72bf-4501-8715-7753136c0481)
+
+![2](https://github.com/eraybahcegulu/AutoClicker-Mouse-Keyboard/assets/84785201/c870eddf-41f1-46c7-aafe-78c211f7973f)
+
+![3](https://github.com/eraybahcegulu/AutoClicker-Mouse-Keyboard/assets/84785201/2812e2ea-2469-4b89-b97a-c57fae929691)
+
 ```
 SW_HIDE (0): Pencereyi gizle.
 SW_SHOWNORMAL (1): Pencereyi normal boyutta göster.
