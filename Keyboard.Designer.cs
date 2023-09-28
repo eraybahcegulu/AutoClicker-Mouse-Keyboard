@@ -187,11 +187,11 @@
             // 
             // gotoProcess
             // 
-            this.gotoProcess.Location = new System.Drawing.Point(304, 160);
+            this.gotoProcess.Location = new System.Drawing.Point(294, 160);
             this.gotoProcess.Name = "gotoProcess";
-            this.gotoProcess.Size = new System.Drawing.Size(92, 47);
+            this.gotoProcess.Size = new System.Drawing.Size(102, 47);
             this.gotoProcess.TabIndex = 10;
-            this.gotoProcess.Text = "Process";
+            this.gotoProcess.Text = "Processes";
             this.gotoProcess.UseVisualStyleBackColor = true;
             this.gotoProcess.Click += new System.EventHandler(this.gotoProcess_Click);
             // 
@@ -213,6 +213,7 @@
             this.Controls.Add(this.DelayCheckedListBox);
             this.Controls.Add(this.KeyboardKeyCheckedListBox);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Keyboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

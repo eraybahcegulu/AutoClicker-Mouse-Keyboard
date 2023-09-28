@@ -66,6 +66,7 @@
             this.ClientSize = new System.Drawing.Size(558, 154);
             this.Controls.Add(this.Keyboard);
             this.Controls.Add(this.Mouse);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auto Clicker";
